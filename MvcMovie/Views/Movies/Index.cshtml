@@ -7,8 +7,8 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
-    @using (Html.BeginForm())
+    @Html.ActionLink("Crear Nueva", "Create")
+    @using (Html.BeginForm("Index", "Movies"))
     {
     <p>
         Genre:@Html.DropDownList("movieGenre", "Todos")
@@ -31,6 +31,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Price)
             </th>
+            <th>@Html.DisplayNameFor(model => model.Rating)</th>
             <th></th>
         </tr>
 
@@ -48,6 +49,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
                 </td>
                 <td>
                     @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
